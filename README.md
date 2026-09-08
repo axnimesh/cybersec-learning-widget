@@ -8,17 +8,26 @@ A functional and educational status bar widget for Omarchy/Hyprland that helps y
 
 ## 🎯 Features
 
+### Core Features
 - **90+ Cybersecurity Terms**: Comprehensive database covering attacks, vulnerabilities, tools, defense, encryption, and frameworks
 - **Auto-Rotation**: New term every 30 seconds for passive learning
 - **Interactive Explanations**: Click the widget to see detailed explanations via popup notifications
-- **Comprehensive Coverage**:
-  - Attack vectors (XSS, SQLi, CSRF, RCE, MITM, etc.)
-  - Vulnerabilities (IDOR, LFI, RFI, SSRF, XXE, SSTI)
-  - Security tools (Nmap, Burp Suite, Metasploit, Wireshark, Hashcat)
-  - Defense concepts (Firewalls, IDS/IPS, WAF, Honeypots)
-  - Encryption & Auth (AES, RSA, TLS, JWT, OAuth, MFA)
-  - Frameworks (OWASP, MITRE ATT&CK, CVE/CVSS)
-  - Team operations (Blue/Red/Purple Team, SOC, IR)
+
+### 🆕 Advanced Features
+- **🎯 Quiz Mode**: Test your knowledge with flashcard-style questions
+- **📊 Learning Statistics**: Track your progress, unique terms reviewed, and learning streaks
+- **🎓 Difficulty Levels**: Filter terms by beginner, intermediate, or advanced categories
+- **⌨️ Keyboard Shortcuts**: Quick access to all features via customizable keybindings
+- **📈 Progress Tracking**: Visual progress indicators showing how many terms you've mastered
+
+### Comprehensive Coverage
+- Attack vectors (XSS, SQLi, CSRF, RCE, MITM, etc.)
+- Vulnerabilities (IDOR, LFI, RFI, SSRF, XXE, SSTI)
+- Security tools (Nmap, Burp Suite, Metasploit, Wireshark, Hashcat)
+- Defense concepts (Firewalls, IDS/IPS, WAF, Honeypots)
+- Encryption & Auth (AES, RSA, TLS, JWT, OAuth, MFA)
+- Frameworks (OWASP, MITRE ATT&CK, CVE/CVSS)
+- Team operations (Blue/Red/Purple Team, SOC, IR)
 
 ## 📸 Screenshot
 
@@ -67,9 +76,54 @@ omarchy restart shell
 
 ## 📚 Usage
 
+### Basic Usage
 1. **Passive Learning**: The widget automatically cycles through terms every 30 seconds
 2. **Active Learning**: Click the widget anytime to see the full explanation
 3. **Continuous Revision**: Keep learning throughout your workday
+
+### 🎯 Quiz Mode
+Test yourself with flashcard-style questions:
+```bash
+~/.config/omarchy/plugins/spider.cybersec-learning/quiz-mode.sh
+```
+Or use the keyboard shortcut: `Super+Shift+Q`
+
+### 📊 View Statistics
+Track your learning progress:
+```bash
+~/.config/omarchy/plugins/spider.cybersec-learning/show-stats.sh
+```
+Or use: `Super+Shift+S`
+
+### 🎓 Difficulty Levels
+Filter by skill level:
+```bash
+# Beginner terms (10 fundamental concepts)
+~/.config/omarchy/plugins/spider.cybersec-learning/category-mode.sh beginner
+
+# Intermediate terms (10 common attack vectors)
+~/.config/omarchy/plugins/spider.cybersec-learning/category-mode.sh intermediate
+
+# Advanced terms (10 sophisticated techniques)
+~/.config/omarchy/plugins/spider.cybersec-learning/category-mode.sh advanced
+```
+
+### ⌨️ Keyboard Shortcuts
+
+Run the setup script to see keybinding options:
+```bash
+~/.config/omarchy/plugins/spider.cybersec-learning/setup-keybindings.sh
+```
+
+**Default shortcuts** (add to `~/.config/hypr/bindings.lua`):
+- `Super+Shift+C` - Show current term explanation
+- `Super+Shift+Q` - Start quiz mode
+- `Super+Shift+A` - Reveal quiz answer
+- `Super+Shift+S` - Show learning statistics
+- `Super+Ctrl+1` - Beginner terms
+- `Super+Ctrl+2` - Intermediate terms
+- `Super+Ctrl+3` - Advanced terms
+- `Super+Shift+H` - Show help
 
 ## 🗂️ File Structure
 
@@ -77,7 +131,22 @@ omarchy restart shell
 spider.cybersec-learning/
 ├── cybersec-widget.sh           # Main widget script with terms database
 ├── show-explanation.sh          # Click handler for showing explanations
-└── README.md                    # This file
+├── quiz-mode.sh                 # Quiz/flashcard mode
+├── quiz-answer.sh               # Quiz answer revealer
+├── show-stats.sh                # Learning statistics viewer
+├── category-mode.sh             # Difficulty level filter
+├── widget-controller.sh         # Multi-mode controller
+├── setup-keybindings.sh         # Keyboard shortcuts setup guide
+├── README.md                    # Documentation
+├── LICENSE                      # MIT License
+└── .gitignore                   # Git ignore file
+```
+
+### Data Files (Auto-generated)
+```
+~/.local/share/cybersec-widget/
+├── quiz-stats.json              # Learning statistics
+└── quiz-history.log             # Review history log
 ```
 
 ## 🎓 Learning Categories
@@ -134,13 +203,16 @@ MIT License - Feel free to use and modify as you wish!
 
 ## 🎯 Roadmap
 
-- [ ] Quiz mode with flashcard-style questions
-- [ ] Learning statistics and progress tracking
-- [ ] Difficulty levels (beginner/intermediate/advanced)
-- [ ] Category filtering
-- [ ] Keyboard shortcuts for quick access
-- [ ] Spaced repetition algorithm
+- [x] Quiz mode with flashcard-style questions
+- [x] Learning statistics and progress tracking
+- [x] Difficulty levels (beginner/intermediate/advanced)
+- [x] Category filtering
+- [x] Keyboard shortcuts for quick access
+- [ ] Spaced repetition algorithm (SRS)
 - [ ] Export/import custom term sets
+- [ ] Web dashboard for detailed analytics
+- [ ] Daily challenges and streaks
+- [ ] Integration with CTF platforms
 
 ## 💡 Inspiration
 
