@@ -1,0 +1,17 @@
+# Runtime state files
+cybersec-widget-state
+cybersec-widget-term
+
+# Git
+.git/
+
+# Editor
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
