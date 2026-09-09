@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 # Quiz Mode - Test your cybersecurity knowledge with flashcard-style questions
 
+# Debug logging
+echo "[$(date)] quiz-mode.sh triggered" >> /tmp/cybersec-debug.log
+
 # Database of cybersecurity terms (same as widget)
 declare -A cybersec_terms=(
     ["XSS"]="Cross-Site Scripting: Injecting malicious scripts into trusted websites"

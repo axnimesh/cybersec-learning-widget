@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "spider.cybersec-learning",
+  "name": "Cybersecurity Learning Widget",
+  "version": "1.0.0",
+  "author": "Spider",
+  "description": "Interactive cybersecurity learning widget with quiz mode and statistics",
+  "kinds": ["bar-widget"],
+  "entryPoints": {
+    "barWidget": "BarWidget.qml"
+  },
+  "barWidget": {
+    "displayName": "Cybersecurity Learning",
+    "description": "Learn cybersecurity concepts with flashcard-style rotation",
+    "category": "Education",
+    "allowMultiple": false,
+    "defaultSection": "center"
+  }
+}
