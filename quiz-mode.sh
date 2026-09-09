@@ -120,7 +120,7 @@ quiz_answer="${cybersec_terms[$quiz_term]}"
 # Show quiz question
 hyprctl notify 3 15000 "rgb(f9e2af)" "🎯 Quiz Time! What does '$quiz_term' mean?
 
-Click the widget or press Super+Shift+Q to reveal the answer" >/dev/null 2>&1
+Click the widget to reveal the answer" >/dev/null 2>&1
 
 # Save current quiz to temp file for answer reveal
 echo "$quiz_term|$quiz_answer" > "${XDG_RUNTIME_DIR:-/tmp}/cybersec-quiz-current"

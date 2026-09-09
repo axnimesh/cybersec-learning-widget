@@ -42,7 +42,7 @@ BarWidget {
     bar: root.bar
     text: root.currentTerm
     horizontalMargin: 8.75
-    tooltipText: "Left-click: explanation | Right-click: quiz | Middle-click: stats"
+    tooltipText: "Left-click: explanation/answer | Right-click: quiz | Middle-click: stats"
     
     onPressed: function(mouseButton) {
       if (mouseButton === Qt.RightButton) {
@@ -51,9 +51,11 @@ BarWidget {
       } else if (mouseButton === Qt.MiddleButton) {
         // Show statistics
         if (root.bar) root.bar.run("bash ~/.config/omarchy/plugins/spider.cybersec-learning/show-stats.sh")
-      } else {
-        // Show explanation
-        if (root.bar) root.bar.run("bash ~/.config/omarchy/plugins/spider.cybersec-learning/show-explanation.sh")
+      } else if (mouseButton === Qt.LeftButton) {
+        // Check if quiz is active - if yes, reveal answer; otherwise show explanation
+        if (root.bar) {
+          root.bar.run("bash -c 'if [ -f \"${XDG_RUNTIME_DIR:-/tmp}/cybersec-quiz-current\" ]; then ~/.config/omarchy/plugins/spider.cybersec-learning/quiz-answer.sh; else ~/.config/omarchy/plugins/spider.cybersec-learning/show-explanation.sh; fi'")
+        }
       }
     }
   }

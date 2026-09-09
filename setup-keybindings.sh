@@ -19,7 +19,7 @@ o.bind("SUPER_SHIFT", "Q", function()
 end, { desc = "Start cybersec quiz" })
 
 # Reveal quiz answer
-o.bind("SUPER_SHIFT", "A", function()
+o.bind("SUPER_SHIFT", "R", function()
   o.exec("~/.config/omarchy/plugins/spider.cybersec-learning/quiz-answer.sh")
 end, { desc = "Reveal quiz answer" })
 
@@ -57,7 +57,7 @@ echo ""
 echo "📋 Quick Reference:"
 echo "  Super+Shift+C : Show current term explanation"
 echo "  Super+Shift+Q : Start quiz mode"
-echo "  Super+Shift+A : Reveal quiz answer"
+echo "  Super+Shift+R : Reveal quiz answer"
 echo "  Super+Shift+S : Show learning statistics"
 echo "  Super+Ctrl+1  : Beginner terms"
 echo "  Super+Ctrl+2  : Intermediate terms"
